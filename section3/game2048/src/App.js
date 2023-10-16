@@ -6,7 +6,8 @@ import useLocalStorageNumber from './hook/useLocalStorage';
 
 function App() {
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useLocalStorageNumber('bestScore', 0);
+  // const [bestScore, setBestScore] = useLocalStorageNumber('bestScore', 0);
+  const [bestScore, setBestScore] = useLocalStorageNumber('bestScore', window.localStorage.getItem('bestScore'));
 
   useEffect(() => {
     if (score > bestScore) {
